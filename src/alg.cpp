@@ -1,10 +1,10 @@
 int gcd(int a, int b) {
-	a = abs(a);
-    b = abs(b);
-    while (b != 0) {
-        int remainder = a % b;
-        a = b;
-        b = remainder;
+	while (a != 0 && b != 0) {
+        if (a > b) {
+            a = a % b;
+        } else {
+            b = b % a;
+        }
     }
-    return a;
+    return a + b;
 }
